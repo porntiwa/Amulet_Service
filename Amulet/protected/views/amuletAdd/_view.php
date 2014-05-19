@@ -2,20 +2,22 @@
 /* @var $this AmuletAddController */
 /* @var $data AmuletAdd */
 ?>
-
+<? /*
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('รูปหน้าปก')); ?>:</b>
+	<!--<b><?php echo CHtml::encode($data->getAttributeLabel('รูปหน้าปก')); ?>:</b>
 	<?php $ImgFile=$data->Image1; ?>
 	<a href = "/Amulet/files/images/<?=$ImgFile;?>" a target="_blank"><?=$ImgFile;?></a><br>
 	<br />
-	
-	
-	
+		-->
+	<b><?php echo CHtml::encode($data->getAttributeLabel('รูปหน้าปก')); ?>:</b>
+	<?php echo CHtml::image(Yii::app()->baseUrl.'../files/images/'.$data->Image1);?>
+	<br />
+
 
 	
 
@@ -51,17 +53,25 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('วิธีสังเกต')); ?>:</b>
 	<?php echo CHtml::encode($data->Observe); ?>
 	<br />
-
+<!--
 	<b><?php echo CHtml::encode($data->getAttributeLabel('จุดสังเกต ')); ?>:</b>
 	<?php $ImgFile=$data->Landmark1; ?>
 	<a href = "/Amulet/files/images/<?=$ImgFile;?>" a target="_blank"><?=$ImgFile;?></a><br>
 	<br />
-	
+	-->
+	<?php echo CHtml::encode($data->getAttributeLabel('จุดสังเกต ')); ?>:</b>
+	<?php echo CHtml::image(Yii::app()->baseUrl.'../files/images/'.$data->Landmark1);?>
+	<br />
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('จุดสังเกต')); ?>:</b>
-	<?php $ImgFile=$data->Landmark2; ?>
-	<a href = "/Amulet/files/images/<?=$ImgFile;?>" a target="_blank"><?=$ImgFile;?></a><br>
+	<?php echo CHtml::image(Yii::app()->baseUrl.'../files/images/'.$data->Landmark2);?>
 	<br />
 
 	 
 </div>
+
+*/ ?>
+
+<?php
+	echo ' "id" :' .  CHtml::encode($data->id) . ",": 
+?>

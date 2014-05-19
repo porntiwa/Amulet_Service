@@ -139,6 +139,27 @@ class AmuletAddController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
+	
+	
+
+	public function actionJson()
+	{
+		$limit = $_GET['limit'];
+
+		 $criteria=new CDbCriteria(array('limit'=>$limit));
+		 
+		$data=AmuletAdd::model()->findAll();
+	
+		header('Content-type: application/json');
+		echo CJSON::encode($data);
+
+		foreach (Yii::app()->log->routes as $route) {
+			if($route instanceof CWebLogRoute) {
+				$route->enabled = false; // disable any weblogroutes
+			}
+		}
+		Yii::app()->end();
+	}
 
 	/**
 	 * Manages all models.

@@ -55,7 +55,7 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=internship_amu',
 			'emulatePrepare' => true,
-			'username' => 'internship_amu',
+			'username' => 'root',
 			'password' => '123456',
 			'charset' => 'utf8',
 		),
